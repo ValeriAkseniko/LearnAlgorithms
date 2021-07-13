@@ -10,23 +10,20 @@ namespace LearnAlgorithms
     {
         public static bool IsAnagram(string firstText,string secondText)
         {
-            firstText = firstText.ToLower();
-            secondText = secondText.ToLower();
-            for (int i = 0; i < firstText.Length; i++)
+            char[] firstArray = ((firstText.ToLower()).ToCharArray());
+            char[] secondArray = ((secondText.ToLower()).ToCharArray());
+            Array.Sort(firstArray);
+            Array.Sort(secondArray);
+            string firstWord = new string(firstArray);
+            string secondWord = new string(secondArray);
+            if (firstWord == secondWord)
             {
-                if (!secondText.Contains(firstText[i]))
-                {
-                    return false;
-                }
+                return true;
             }
-            for (int i = 0; i < secondText.Length; i++)
+            else
             {
-                if (!firstText.Contains(secondText[i]))
-                {
-                    return false;
-                }
+                return false;
             }
-            return true;
         }
         public static bool IsPalindrom(string text)
         {

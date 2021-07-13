@@ -11,7 +11,7 @@ namespace LearnAlgorithms
         static void Main(string[] args)
         {
             string testText = "Норы";
-            string testText2 = "Рано";
+            string testText2 = "НорыНоры";
             bool result = StringAlgorithms.IsAnagram(testText, testText2);
             Console.WriteLine(result);
             Console.ReadKey();
