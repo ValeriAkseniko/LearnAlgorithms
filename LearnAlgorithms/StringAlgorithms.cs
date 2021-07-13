@@ -8,6 +8,23 @@ namespace LearnAlgorithms
 {
     static class StringAlgorithms
     {
+        public static bool IsAnagram(string firstText,string secondText)
+        {
+            char[] firstArray = ((firstText.ToLower()).ToCharArray());
+            char[] secondArray = ((secondText.ToLower()).ToCharArray());
+            Array.Sort(firstArray);
+            Array.Sort(secondArray);
+            string firstWord = new string(firstArray);
+            string secondWord = new string(secondArray);
+            if (firstWord == secondWord)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
         public static bool IsPalindrom(string text)
         {
             text = text.ToLower();
