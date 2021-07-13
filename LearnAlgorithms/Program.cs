@@ -10,9 +10,9 @@ namespace LearnAlgorithms
     {
         static void Main(string[] args)
         {
-            string testText = "Норы";
-            string testText2 = "НорыНоры";
-            bool result = StringAlgorithms.IsAnagram(testText, testText2);
+            DateTime start = DateTime.Now;
+            DateTime end = start.AddDays(12);
+            int result = OtherAlgorithms.CountDayOff(start, end);
             Console.WriteLine(result);
             Console.ReadKey();
         }
