@@ -10,6 +10,10 @@ namespace LearnAlgorithms
     {
         static void Main(string[] args)
         {
+            string testText = "Teet";
+            bool result = StringAlgorithms.IsPalindrom(testText);
+            Console.WriteLine(result);
+            Console.ReadKey();
         }
     }
 }
