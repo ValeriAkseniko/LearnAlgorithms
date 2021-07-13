@@ -10,8 +10,9 @@ namespace LearnAlgorithms
     {
         static void Main(string[] args)
         {
-            string testText = "Teet";
-            bool result = StringAlgorithms.IsPalindrom(testText);
+            string testText = "Норы";
+            string testText2 = "Рано";
+            bool result = StringAlgorithms.IsAnagram(testText, testText2);
             Console.WriteLine(result);
             Console.ReadKey();
         }
