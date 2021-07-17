@@ -37,13 +37,16 @@ namespace LearnAlgorithms
         public static DateTime[] ArrayDayOff(DateTime start, DateTime end)
         {
             int arrayLength = CountDayOff(start, end);
-            List<DateTime> listDate = ListDayOff(start, end);
             DateTime[] result = new DateTime[arrayLength];
-            for (int i = 0; i < result.Length; i++)
+            int i = 0;
+            for (DateTime currentDate = start; currentDate.Date <= end.Date; currentDate = currentDate.AddDays(1))
             {
-                result[i] = listDate[i];
+                if (currentDate.DayOfWeek == DayOfWeek.Sunday || currentDate.DayOfWeek == DayOfWeek.Saturday)
+                {
+                    result[i] = currentDate;
+                    i++;
+                }
             }
-
             return result;
         }
     }
