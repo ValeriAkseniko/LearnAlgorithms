@@ -11,39 +11,43 @@ namespace LearnAlgorithms
         public static int CountDayOff(DateTime start, DateTime end)
         {
             int result = 0;
-            double days = (end - start).TotalDays;
-            List<DateTime> allDays = new List<DateTime>();
-            int j = 0;
-            for (DateTime i = start; j <= days; j++)
+            for (DateTime currentDate = start; currentDate.Date <= end.Date; currentDate = currentDate.AddDays(1))
             {
-                allDays.Add(i);
-                i = i.AddDays(1);
-            }
-            for (int i = 0; i < allDays.Count; i++)
-            {
-                if (allDays[i].DayOfWeek == DayOfWeek.Sunday || allDays[i].DayOfWeek == DayOfWeek.Saturday)
+                if (currentDate.DayOfWeek == DayOfWeek.Sunday || currentDate.DayOfWeek == DayOfWeek.Saturday)
                 {
                     result++;
                 }
             }
             return result;
         }
+        //public static int CountDayOff(DateTime start, DateTime end)
+        //{
+        //    int result = 0;
+        //    double days = (end - start).TotalDays;
+        //    List<DateTime> allDays = new List<DateTime>();
+        //    int j = 0;
+        //    for (DateTime i = start; j <= days; j++)
+        //    {
+        //        allDays.Add(i);
+        //        i = i.AddDays(1);
+        //    }
+        //    for (int i = 0; i < allDays.Count; i++)
+        //    {
+        //        if (allDays[i].DayOfWeek == DayOfWeek.Sunday || allDays[i].DayOfWeek == DayOfWeek.Saturday)
+        //        {
+        //            result++;
+        //        }
+        //    }
+        //    return result;
+        //}
         public static List<DateTime> ListDayOff(DateTime start, DateTime end)
         {
             List<DateTime> result = new List<DateTime>();
-            double days = (end - start).TotalDays;
-            List<DateTime> allDays = new List<DateTime>();
-            int j = 0;
-            for (DateTime i = start; j <= days; j++)
+            for (DateTime currentDate = start; currentDate.Date <= end.Date; currentDate = currentDate.AddDays(1))
             {
-                allDays.Add(i);
-                i = i.AddDays(1);
-            }
-            for (int i = 0; i < allDays.Count; i++)
-            {
-                if (allDays[i].DayOfWeek == DayOfWeek.Sunday || allDays[i].DayOfWeek == DayOfWeek.Saturday)
+                if (currentDate.DayOfWeek == DayOfWeek.Sunday || currentDate.DayOfWeek == DayOfWeek.Saturday)
                 {
-                    result.Add(allDays[i]);
+                    result.Add(currentDate);
                 }
             }
             return result;
@@ -51,23 +55,13 @@ namespace LearnAlgorithms
         public static DateTime[] ArrayDayOff(DateTime start, DateTime end)
         {
             int arrayLength = CountDayOff(start, end);
-            double days = (end - start).TotalDays;
+            List<DateTime> listDate = ListDayOff(start, end);
             DateTime[] result = new DateTime[arrayLength];
-            List<DateTime> allDays = new List<DateTime>();
-            int j = 0;
-            for (DateTime i = start; j <= days; j++)
+            for (int i = 0; i < result.Length; i++)
             {
-                allDays.Add(i);
-                i = i.AddDays(1);
+                result[i] = listDate[i];
             }
-            for (int i = 0, k = 0; i < allDays.Count; i++)
-            {
-                if (allDays[i].DayOfWeek == DayOfWeek.Sunday || allDays[i].DayOfWeek == DayOfWeek.Saturday)
-                {
-                    result[k] = allDays[i];
-                    k++;
-                }
-            }
+
             return result;
         }
     }
