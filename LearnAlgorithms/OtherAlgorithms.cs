@@ -63,13 +63,10 @@ namespace LearnAlgorithms
         public static bool IsIncluded(DateTime star, DateTime end, DateTime date)
         {
             List<DateTime> dates = listDates(star, end);
-            for (int i = 0; i < dates.Count; i++)
+            if (dates.Contains(date))
             {
-                if (dates[i].Date == date.Date)
-                {
-                    return true;
-                }
-            }
+                return true;
+            }            
             return false;
         }
 
