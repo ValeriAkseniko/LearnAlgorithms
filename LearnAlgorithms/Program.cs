@@ -12,7 +12,7 @@ namespace LearnAlgorithms
         {
             DateTime firstStart = DateTime.Now;
             DateTime firstEnd = firstStart.AddDays(20);
-            DateTime secondStart = firstStart.AddDays(22);
+            DateTime secondStart = firstStart.AddDays(15);
             DateTime secondEnd = firstStart.AddDays(30);
             bool result = OtherAlgorithms.IsIncluded(firstStart,firstEnd,secondStart,secondEnd);
             Console.WriteLine(result);

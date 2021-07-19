@@ -60,27 +60,20 @@ namespace LearnAlgorithms
             return result;
         }
 
-        public static bool IsIncluded(DateTime star, DateTime end, DateTime date)
+        public static bool IsIncluded(DateTime start, DateTime end, DateTime date)
         {
-            List<DateTime> dates = listDates(star, end);
-            if (dates.Contains(date))
+            if (date.Date <= end && date.Date >= start.Date)
             {
                 return true;
-            }            
+            }
             return false;
         }
 
         public static bool IsIncluded(DateTime startFirst,DateTime endFirst,DateTime startSecond,DateTime endSecond)
         {
-            List<DateTime> firstDates = listDates(startFirst, endFirst);
-            List<DateTime> secondDates = listDates(startSecond, endSecond);
-            for (int i = 0; i < firstDates.Count; i++)
+            if (!(endFirst < startSecond || startFirst > endSecond))
             {
-                if (secondDates.Contains(firstDates[i]))
-                {
-                    return true;
-                    break;
-                }
+                return true;
             }
             return false;
         }
