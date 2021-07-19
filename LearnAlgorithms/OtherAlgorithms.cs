@@ -49,5 +49,33 @@ namespace LearnAlgorithms
             }
             return result;
         }
+
+        public static List<DateTime> listDates(DateTime start, DateTime end)
+        {
+            List<DateTime> result = new List<DateTime>();
+            for (DateTime currentDate = start; currentDate.Date <= end.Date; currentDate = currentDate.AddDays(1))
+            {
+                result.Add(currentDate);
+            }
+            return result;
+        }
+
+        public static bool IsIncluded(DateTime start, DateTime end, DateTime date)
+        {
+            if (date.Date <= end && date.Date >= start.Date)
+            {
+                return true;
+            }
+            return false;
+        }
+
+        public static bool IsIncluded(DateTime startFirst,DateTime endFirst,DateTime startSecond,DateTime endSecond)
+        {
+            if (!(endFirst < startSecond || startFirst > endSecond))
+            {
+                return true;
+            }
+            return false;
+        }
     }
 }
