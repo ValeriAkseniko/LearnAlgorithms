@@ -16,6 +16,7 @@ namespace LearnAlgorithms
             DateTime secondEnd = firstStart.AddDays(30);
             bool result = OtherAlgorithms.IsIncluded(firstStart,firstEnd,secondStart,secondEnd);
             Console.WriteLine(result);
+            Console.WriteLine("тест коммитт");
             Console.ReadKey();
         }
     }
