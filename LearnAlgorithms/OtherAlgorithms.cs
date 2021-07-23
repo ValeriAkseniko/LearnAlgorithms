@@ -69,7 +69,7 @@ namespace LearnAlgorithms
             return false;
         }
 
-        public static bool IsIncluded(DateTime startFirst,DateTime endFirst,DateTime startSecond,DateTime endSecond)
+        public static bool IsIncluded(DateTime startFirst, DateTime endFirst, DateTime startSecond, DateTime endSecond)
         {
             if (!(endFirst < startSecond || startFirst > endSecond))
             {
@@ -77,5 +77,72 @@ namespace LearnAlgorithms
             }
             return false;
         }
+
+        public static void PrintFor(List<int> numbers)
+        {
+            if (numbers != null)
+            {
+                for (int i = 0; i < numbers.Count; i++)
+                {
+                    Console.WriteLine(numbers[i]);
+                }
+            }            
+        }
+
+        public static void PrintForEach(List<int> numbers)
+        {
+            if (numbers != null)
+            {
+                foreach (int number in numbers)
+                {
+                    Console.WriteLine(number);
+                }
+            }            
+        }
+
+        public static void PrintWhile(List<int> numbers)
+        {
+            if (numbers != null)
+            {
+                int i = 0;
+                while (i < numbers.Count)
+                {
+                    Console.WriteLine(numbers[i]);
+                    i++;
+                }
+            }            
+        }
+
+        public static void PrintDoWhile(List<int> numbers)
+        {
+            if (numbers != null || numbers.Count > 0)
+            {
+                int i = 0;
+                do
+                {
+                    Console.WriteLine(numbers[i]);
+                    i++;
+                } while (i < numbers.Count);
+            }            
+        }
+        public static void Print (List<int> numbers, CycleType cycleType)
+        {
+            switch (cycleType)
+            {
+                case CycleType.For:
+                    PrintFor(numbers);
+                    break;
+                case CycleType.While:
+                    PrintWhile(numbers);
+                    break;
+                case CycleType.DoWhile:
+                    PrintDoWhile(numbers);
+                    break;
+                case CycleType.ForEach:
+                    PrintForEach(numbers);
+                    break;
+            }
+        }
+
     }
 }
