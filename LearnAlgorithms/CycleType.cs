@@ -6,11 +6,11 @@ using System.Threading.Tasks;
 
 namespace LearnAlgorithms
 {
-    class Program
+    enum CycleType
     {
-        static void Main(string[] args)
-        {
-
-        }
+        For = 1,
+        While,
+        DoWhile,
+        Forech
     }
 }
