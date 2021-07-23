@@ -11,6 +11,6 @@ namespace LearnAlgorithms
         For = 1,
         While,
         DoWhile,
-        Forech
+        ForEach
     }
 }

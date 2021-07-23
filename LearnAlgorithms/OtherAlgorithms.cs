@@ -80,40 +80,52 @@ namespace LearnAlgorithms
 
         public static void PrintFor(List<int> numbers)
         {
-            for (int i = 0; i < numbers.Count; i++)
+            if (numbers != null)
             {
-                Console.WriteLine(numbers[i]);
-            }
+                for (int i = 0; i < numbers.Count; i++)
+                {
+                    Console.WriteLine(numbers[i]);
+                }
+            }            
         }
 
         public static void PrintForEach(List<int> numbers)
         {
-            foreach (int number in numbers)
+            if (numbers != null)
             {
-                Console.WriteLine(number);
-            }
+                foreach (int number in numbers)
+                {
+                    Console.WriteLine(number);
+                }
+            }            
         }
 
         public static void PrintWhile(List<int> numbers)
         {
-            int i = 0;
-            while (i < numbers.Count)
+            if (numbers != null)
             {
-                Console.WriteLine(numbers[i]);
-                i++;
-            }
+                int i = 0;
+                while (i < numbers.Count)
+                {
+                    Console.WriteLine(numbers[i]);
+                    i++;
+                }
+            }            
         }
 
         public static void PrintDoWhile(List<int> numbers)
         {
-            int i = 0;
-            do
+            if (numbers != null || numbers.Count > 0)
             {
-                Console.WriteLine(numbers[i]);
-                i++;
-            } while (i < numbers.Count);
+                int i = 0;
+                do
+                {
+                    Console.WriteLine(numbers[i]);
+                    i++;
+                } while (i < numbers.Count);
+            }            
         }
-        public static void Print (List<int> numbers,CycleType cycleType)
+        public static void Print (List<int> numbers, CycleType cycleType)
         {
             switch (cycleType)
             {
@@ -126,7 +138,7 @@ namespace LearnAlgorithms
                 case CycleType.DoWhile:
                     PrintDoWhile(numbers);
                     break;
-                case CycleType.Forech:
+                case CycleType.ForEach:
                     PrintForEach(numbers);
                     break;
             }
