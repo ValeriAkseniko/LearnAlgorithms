@@ -86,7 +86,7 @@ namespace LearnAlgorithms
                 {
                     Console.WriteLine(numbers[i]);
                 }
-            }            
+            }
         }
 
         public static void PrintForEach(List<int> numbers)
@@ -97,7 +97,7 @@ namespace LearnAlgorithms
                 {
                     Console.WriteLine(number);
                 }
-            }            
+            }
         }
 
         public static void PrintWhile(List<int> numbers)
@@ -110,7 +110,7 @@ namespace LearnAlgorithms
                     Console.WriteLine(numbers[i]);
                     i++;
                 }
-            }            
+            }
         }
 
         public static void PrintDoWhile(List<int> numbers)
@@ -123,9 +123,10 @@ namespace LearnAlgorithms
                     Console.WriteLine(numbers[i]);
                     i++;
                 } while (i < numbers.Count);
-            }            
+            }
         }
-        public static void Print (List<int> numbers, CycleType cycleType)
+
+        public static void Print(List<int> numbers, CycleType cycleType)
         {
             switch (cycleType)
             {
@@ -142,6 +143,31 @@ namespace LearnAlgorithms
                     PrintForEach(numbers);
                     break;
             }
+        }
+
+        public static string CaesarEncryption(string text, int key)
+        {
+            char[] array = new char[text.Length];
+            for (int i = 0; i < text.Length; i++)
+            {
+                int code = (int)text[i];
+                code += key;
+                array[i] = (char)code;
+            }
+            string newText = new string(array);
+            return newText;
+        }
+        public static string CaesarDecryption(string text, int key)
+        {
+            char[] array = new char[text.Length];
+            for (int i = 0; i < text.Length; i++)
+            {
+                int code = (int)text[i];
+                code -= key;
+                array[i] = (char)code;
+            }
+            string newText = new string(array);
+            return newText;
         }
 
     }
