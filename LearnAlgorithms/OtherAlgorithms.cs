@@ -157,6 +157,7 @@ namespace LearnAlgorithms
             string newText = new string(array);
             return newText;
         }
+
         public static string CaesarDecryption(string text, int key)
         {
             char[] array = new char[text.Length];
@@ -168,6 +169,23 @@ namespace LearnAlgorithms
             }
             string newText = new string(array);
             return newText;
+        }
+
+        public static DateTime GetStartMonth(DateTime date)
+        {
+            int year = date.Year;
+            int month = date.Month;
+            DateTime startMonth = new DateTime(year, month, 1);
+            return startMonth;
+        }
+
+        public static DateTime GetEndMonth(DateTime date)
+        {
+            int year = date.Year;
+            int month = date.Month;
+            int days = DateTime.DaysInMonth(year, month);
+            DateTime endMonth = new DateTime(year, month, days);
+            return endMonth;
         }
 
     }
