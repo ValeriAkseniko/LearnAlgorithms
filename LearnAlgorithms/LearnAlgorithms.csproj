@@ -44,6 +44,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CycleType.cs" />
+    <Compile Include="Enums\Month.cs" />
     <Compile Include="FindAlgorithms.cs" />
     <Compile Include="OtherAlgorithms.cs" />
     <Compile Include="Program.cs" />

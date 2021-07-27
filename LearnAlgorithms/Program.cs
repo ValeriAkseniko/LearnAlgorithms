@@ -10,7 +10,7 @@ namespace LearnAlgorithms
     {
         static void Main(string[] args)
         {
-
+            
         }
     }
 }
