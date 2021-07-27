@@ -237,53 +237,48 @@ namespace LearnAlgorithms
 
         public static Month GetMonth(int number)
         {
-            if (number <= 12)
+            switch (number)
             {
-                switch (number)
-                {
-                    case 1:
-                        return Month.January;
-                        break;
-                    case 2:
-                        return Month.February;
-                        break;
-                    case 3:
-                        return Month.March;
-                        break;
-                    case 4:
-                        return Month.April;
-                        break;
-                    case 5:
-                        return Month.May;
-                        break;
-                    case 6:
-                        return Month.June;
-                        break;
-                    case 7:
-                        return Month.July;
-                        break;
-                    case 8:
-                        return Month.August;
-                        break;
-                    case 9:
-                        return Month.September;
-                        break;
-                    case 10:
-                        return Month.October;
-                        break;
-                    case 11:
-                        return Month.November;
-                        break;
-                    case 12:
-                        return Month.December;
-                        break;
-                    default:
-                        return Month.Nan;
-                        break;
-                }
+                case 1:
+                    return Month.January;
+                    break;
+                case 2:
+                    return Month.February;
+                    break;
+                case 3:
+                    return Month.March;
+                    break;
+                case 4:
+                    return Month.April;
+                    break;
+                case 5:
+                    return Month.May;
+                    break;
+                case 6:
+                    return Month.June;
+                    break;
+                case 7:
+                    return Month.July;
+                    break;
+                case 8:
+                    return Month.August;
+                    break;
+                case 9:
+                    return Month.September;
+                    break;
+                case 10:
+                    return Month.October;
+                    break;
+                case 11:
+                    return Month.November;
+                    break;
+                case 12:
+                    return Month.December;
+                    break;
+                default:
+                    return Month.Nan;
+                    break;
             }
-            return Month.Nan;
         }
-
     }
 }
