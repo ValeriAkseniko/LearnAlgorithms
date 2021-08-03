@@ -10,10 +10,6 @@ namespace LearnAlgorithms
     {
         public static int BinarySearch(int[] array, int value)
         {
-            if (value < array[0] || value > array[array.Length-1])
-            {
-                return -1;                
-            }
             int firstIndex = 0;
             int secondIndex = array.Length;
             int result = array.Length / 2;
@@ -24,23 +20,21 @@ namespace LearnAlgorithms
             }
             else
             {
-                if (midle < value)
+                if (midle > value)
                 {
-                    firstIndex = result;
-                    return BinarySearch(array, value, firstIndex, secondIndex);
+                    return BinarySearch(array, value, firstIndex, result);
+                    
                 }
-                else if (midle > value)
+                else
                 {
-                    secondIndex = result;
-                    return BinarySearch(array, value, firstIndex, secondIndex);
+                    return BinarySearch(array, value, result, secondIndex);
                 }
-                return -1;
             }
 
         }
         public static int BinarySearch(int[] array,int value,int firstIndex, int secondIndex)
         {
-            if (firstIndex >= secondIndex)
+            if (firstIndex > secondIndex)
             {
                 return -1;
             }
@@ -52,17 +46,14 @@ namespace LearnAlgorithms
             }
             else
             {
-                if (midle < value)
+                if (midle > value)
                 {
-                    firstIndex = result;
-                    return BinarySearch(array, value, firstIndex, secondIndex);
+                    return BinarySearch(array, value, firstIndex, result - 1);
                 }
-                else if (midle > value)
+                else 
                 {
-                    secondIndex = result;
-                    return BinarySearch(array, value, firstIndex, secondIndex);
+                    return BinarySearch(array, value, result + 1, secondIndex);
                 }
-                return -1;
             }
         }        
     }
