@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LearnAlgorithms.Enums
 {
-    enum Month
+    public enum Month
     {
         January = 1,
         February,

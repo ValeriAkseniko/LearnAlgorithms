@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace LearnAlgorithms
 {
-    static class OtherAlgorithms
+    public static class OtherAlgorithms
     {
         public static int CountDayOff(DateTime start, DateTime end)
         {

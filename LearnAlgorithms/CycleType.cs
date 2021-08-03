@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LearnAlgorithms
 {
-    enum CycleType
+    public enum CycleType
     {
         For = 1,
         While,
