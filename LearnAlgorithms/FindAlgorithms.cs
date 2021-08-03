@@ -32,7 +32,7 @@ namespace LearnAlgorithms
             }
 
         }
-        public static int BinarySearch(int[] array,int value,int firstIndex, int secondIndex)
+        public static int BinarySearch(int[] array, int value, int firstIndex, int secondIndex)
         {
             if (firstIndex > secondIndex)
             {
