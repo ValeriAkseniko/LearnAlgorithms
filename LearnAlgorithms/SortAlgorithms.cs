@@ -8,11 +8,11 @@ namespace LearnAlgorithms
 {
     static class SortAlgorithms
     {
-        public static void Mix(int[] array)
+        public static void Mix(int[] array,int countSwap = 100)
         {
             Random rnd = new Random();
             int maxIndex = array.Length - 1;
-            for (int i = 0; i < rnd.Next(0, 100); i++)
+            for (int i = 0; i < countSwap; i++)
             {
                 int firstIndex = rnd.Next(0, maxIndex);
                 int secondIndex = rnd.Next(0, maxIndex);
@@ -21,11 +21,11 @@ namespace LearnAlgorithms
                 array[secondIndex] = blank;
             }
         }
-        public static void Mix(List<int> list)
+        public static void Mix(List<int> list, int countSwap = 100)
         {
             Random rnd = new Random();
             int maxIndex = list.Count;
-            for (int i = 0; i < rnd.Next(0,100); i++)
+            for (int i = 0; i < countSwap; i++)
             {
                 int firstIndex = rnd.Next(0, maxIndex);
                 int secondIndex = rnd.Next(0, maxIndex);
