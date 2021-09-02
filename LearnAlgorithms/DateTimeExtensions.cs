@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LearnAlgorithms
 {
-    public static class DateTimeExtendings
+    public static class DateTimeExtensions
     {
         public static DateTime AddWeeks(this DateTime date, int value)
         {
