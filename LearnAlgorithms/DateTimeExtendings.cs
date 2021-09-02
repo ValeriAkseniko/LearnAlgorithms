@@ -10,7 +10,7 @@ namespace LearnAlgorithms
     {
         public static DateTime AddWeeks(this DateTime date, int value)
         {
-            DateTime newDate = date.AddDays(value);
+            DateTime newDate = date.AddDays(value*7);
             return newDate;
         }
 
