@@ -8,7 +8,7 @@ namespace LearnAlgorithms
 {
     static class StringAlgorithms
     {
-        public static bool IsAnagram(string firstText,string secondText)
+        public static bool IsAnagram(string firstText, string secondText)
         {
             char[] firstArray = ((firstText.ToLower()).ToCharArray());
             char[] secondArray = ((secondText.ToLower()).ToCharArray());
@@ -25,6 +25,7 @@ namespace LearnAlgorithms
                 return false;
             }
         }
+
         public static bool IsPalindrom(string text)
         {
             text = text.ToLower();
@@ -36,6 +37,30 @@ namespace LearnAlgorithms
                 }
             }
             return true;
+        }
+
+        static List<string> ListWords(string text)
+        {
+            text = text.ToLower();
+            text = text.Trim();
+            char[] chars = text.ToCharArray();
+            chars = Array.FindAll<char>(chars, (c => (char.IsLetter(c)
+                                              || char.IsWhiteSpace(c))));
+            text = new string(chars);
+            text = text.Replace("   ", "  ");
+            text = text.Replace("  ", " ");
+            List<string> words = text.Split(' ').ToList();
+            return words;
+        }
+
+        public static Dictionary<string, int> GetWordStatistic(string text)
+        {
+            List<string> words = ListWords(text);
+            Dictionary<string, int> result = new Dictionary<string, int>()
+            {
+                {words[0],words.Count}
+            };
+            return result;
         }
     }
 }
