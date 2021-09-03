@@ -14,16 +14,16 @@ namespace LearnAlgorithms
             return newDate;
         }
 
-        public static DateTime StartWeek(this DateTime date)
+        public static DateTime StartWeek(this DateTime date, DayOfWeek startOfWeek = DayOfWeek.Monday)
         {
-            int dayValue = (int)date.DayOfWeek;
+            int dayValue = (7 + (date.DayOfWeek - startOfWeek)) % 7;
             DateTime startWeek = date.AddDays(-1 * dayValue);
             return startWeek;
         }
 
-        public static DateTime EndWeek(this DateTime date)
+        public static DateTime EndWeek(this DateTime date, DayOfWeek endOfWeek = DayOfWeek.Sunday)
         {
-            int dayValue = (int)date.DayOfWeek;
+            int dayValue = (7 + (date.DayOfWeek - endOfWeek)) % 7;
             DateTime endWeek = date.AddDays(7 - dayValue);
             return endWeek;
         }

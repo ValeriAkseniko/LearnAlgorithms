@@ -10,7 +10,9 @@ namespace LearnAlgorithms
     {
         static void Main(string[] args)
         {
-            
+
+            DateTime test = new DateTime(2021, 9, 7);
+            test = test.EndWeek();
         }
     }
 }
