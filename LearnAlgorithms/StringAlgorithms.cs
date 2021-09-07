@@ -47,8 +47,10 @@ namespace LearnAlgorithms
             chars = Array.FindAll<char>(chars, (c => (char.IsLetter(c)
                                               || char.IsWhiteSpace(c))));
             text = new string(chars);
-            text = text.Replace("   ", "  ");
-            text = text.Replace("  ", " ");
+            while (text.Contains("  "))
+            {
+                text.Replace("  ", " ");
+            }
             List<string> words = text.Split(' ').ToList();
             return words;
         }
@@ -56,10 +58,22 @@ namespace LearnAlgorithms
         public static Dictionary<string, int> GetWordStatistic(string text)
         {
             List<string> words = ListWords(text);
-            Dictionary<string, int> result = new Dictionary<string, int>()
+            Dictionary<string, int> result = new Dictionary<string, int>();
+            for (int i = 0; i < words.Count; i++)
             {
-                {words[0],words.Count}
-            };
+                int countContains = 0;
+                for (int j = 0; j < words.Count; j++)
+                {
+                    if (words[j] == words[i])
+                    {
+                        countContains++;
+                    }
+                }                
+                if (!result.ContainsKey(words[i]))
+                {
+                    result.Add(words[i], countContains);
+                }
+            }
             return result;
         }
     }
