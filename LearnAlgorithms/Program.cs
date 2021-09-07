@@ -10,9 +10,11 @@ namespace LearnAlgorithms
     {
         static void Main(string[] args)
         {
+            string text = "я просто не совсем понимаю.можно обратиться к строчке в словаре по значению, а не по ключу ? ";
 
-            DateTime test = new DateTime(2021, 9, 7);
-            test = test.EndWeek();
+            Dictionary<string, int> result = new Dictionary<string, int>();
+
+            result = StringAlgorithms.GetWordStatistic(text);
         }
     }
 }
