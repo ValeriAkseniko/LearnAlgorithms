@@ -8,6 +8,30 @@ namespace LearnAlgorithms
 {
     static class StringAlgorithms
     {
+        const string RusChars = "йцукенгшщзхъфывапролджэячсмитьбюЙЦУКЕНГШЩЗХЪФЫВАПРОЛДЖЭЯЧСМИТЬБЮ";
+        const string EngChars = "qwertyuiopasdfghjklzxcvbnmQWERTYUIOPASDFGHJKLZXCVBNM";
+        static bool IsRusLetter(char symbol)
+        {
+            if (!RusChars.Contains(symbol))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
+        static bool IsEngLetter(char symbol)
+        {
+            if (!EngChars.Contains(symbol))
+            {
+                return false;
+            }
+            else
+            {
+                return true;
+            }
+        }
         public static bool IsAnagram(string firstText, string secondText)
         {
             char[] firstArray = ((firstText.ToLower()).ToCharArray());
@@ -42,9 +66,10 @@ namespace LearnAlgorithms
         static List<string> ListWords(string text)
         {
             text = text.ToLower();
-            text = text.Trim();
+            text = text.Trim();            
             char[] chars = text.ToCharArray();
-            chars = Array.FindAll<char>(chars, (c => (char.IsLetter(c)
+            chars = Array.FindAll<char>(chars, (c => (IsRusLetter(c)
+                                              || IsEngLetter(c) 
                                               || char.IsWhiteSpace(c))));
             text = new string(chars);
             while (text.Contains("  "))
@@ -61,17 +86,13 @@ namespace LearnAlgorithms
             Dictionary<string, int> result = new Dictionary<string, int>();
             for (int i = 0; i < words.Count; i++)
             {
-                int countContains = 0;
-                for (int j = 0; j < words.Count; j++)
-                {
-                    if (words[j] == words[i])
-                    {
-                        countContains++;
-                    }
-                }                
                 if (!result.ContainsKey(words[i]))
                 {
-                    result.Add(words[i], countContains);
+                    result.Add(words[i], 1);
+                }
+                else
+                {
+                    result[words[i]]++;                    
                 }
             }
             return result;
